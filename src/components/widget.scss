@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.sWidget{
+  font-family: 'Roboto', sans-serif;
+}
+
+.docked-widget {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  width: 160px;
+  z-index: 9999;
+  
+}
+
+.doc{
+  &-wrapper{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    p{
+      background-color: #fff;
+      padding: 4px 8px;
+      color: #000;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7) ;
+      border-radius: 3px;
+    }
+  }
+  &-button, button {
+    cursor: pointer;
+    background-color: transparent;
+    background-color: rgb(235,75,89);
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    & span{
+      font-size: 40px;
+    }
+  }
+}
+
+.widget {
+  width: 380px;
+  border-bottom: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  &-entered {
+    display: inherit;
+    visibility: visible;
+  }
+  &-exited {
+    display: none;
+    visibility: hidden;
+  }
+  &-header {
+    // height: 30px;
+    // line-height: 30px;
+    background: rgb(248,248,248);
+    color: grey;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    
+    &-title {
+      display: flex;
+      flex-grow: 1;
+      color: rgb(51, 51, 51);
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+    &-subtitle{
+      color: rgb(166,166,166);
+      margin: 8px 0;
+    }
+
+    &-icon {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .75rem;
+      position: absolute;
+      right: 0;
+      border:none;
+      outline: none;
+    }
+  }
+  &-body {
+    background: white;
+    padding: 10px;
+    height: 350px;
+    overflow: scroll;
+    & ::placeholder {
+      color: #b5b8bb;
+      font-family: 'Roboto', sans-serif;
+    }
+    & input, select, textarea,.backButton{
+      width: 100%;
+      margin: 8px 0;
+      border-radius: 2px;
+      box-shadow: none;
+      padding: 10px 8px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    & input[type="text"], textarea, select {
+      border: 1px solid rgb(196,205,213);
+    }
+    & input[type="submit"], .backButton{
+      background-color: rgb(58,67,75); 
+      box-shadow: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    textarea{
+      min-height: 120px;
+      border-radius: 2px;
+    }
+
+    & .formSubmit{
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p{
+        text-align: center;
+        font-size: 24px;
+      }
+    }
+  }
+  &-footer {
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+    color: yellowgreen;
+    border-bottom: 1px solid #9da2a6;
+    font-size: 12px;
+    p{
+      color: rgb(182,183,183);
+      a{
+          text-decoration: none;
+          color: rgb(237, 118, 128);
+      }
+    }
+  }
+}

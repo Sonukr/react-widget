@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Widget Docs</h1>
+    <ul>
+      <li><a href="./auto_index.html">Widget auto Init</a></li>
+      <li><a href="./init_index.html">Widget using  manual Init</a></li>
+    </ul>
+    <script src="./widget_nonInit.js"></script>
+    <script>
+      WidgetInit.mount({
+        'bodyText': "Hello, I am a manually initialted widget."
+      })
+    </script>
+</body>
+</html>
