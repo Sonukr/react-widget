@@ -48,7 +48,7 @@ class Widget extends Component {
     );
   }
 
-  handleSubmit =(e) =>{
+  handleSubmit =async (e) =>{
     e.preventDefault();
     const formData = {
       name: e.target.name.value,
@@ -57,6 +57,11 @@ class Widget extends Component {
       subject: e.target.subject.value
     }
     console.log(formData)
+
+    await fetch('https://widget.free.beeceptor.com/form', {
+      method: "POST",
+      body: JSON.stringify(formData)
+    }).then(res => console.log(res))
     this.setState({
       formSubmitted: true
     })
@@ -160,7 +165,7 @@ class Widget extends Component {
     }
     return '';
   }
-  
+
   render() {
     const { isOpened } = this.state;
     return (
