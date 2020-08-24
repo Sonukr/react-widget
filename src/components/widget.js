@@ -58,7 +58,9 @@ class Widget extends Component {
     }
     console.log(formData)
 
-    await fetch('https://widget.free.beeceptor.com/form', {
+    const url = 'https://widget.free.beeceptor.com/form';
+    const  {WidgetSettings:{form_submission_url}} = this.state;
+    await fetch((form_submission_url || url), {
       method: "POST",
       body: JSON.stringify(formData)
     }).then(res => console.log(res))
@@ -75,8 +77,7 @@ class Widget extends Component {
 
 
   getHeader = () => {
-    const { formSubmitted, WidgetSettings } = this.state;
-    const {form_title, form_subtitle}  = WidgetSettings;
+    const { formSubmitted, WidgetSettings: {form_title, form_subtitle} } = this.state;
     return (
       <div className="widget-header">
         
@@ -112,8 +113,7 @@ class Widget extends Component {
   }
 
   getBody = () =>{
-    const {formSubmitted, WidgetSettings } = this.state;
-    const {button_text} = WidgetSettings;
+    const {formSubmitted, WidgetSettings:{button_text} } = this.state;
 
     return(
       <div className="widget-body">

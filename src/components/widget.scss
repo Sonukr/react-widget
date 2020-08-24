@@ -21,7 +21,6 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
-
     p{
       background-color: #fff;
       padding: 4px 8px;
@@ -98,7 +97,7 @@
   }
   &-body {
     background: white;
-    padding: 10px;
+    padding: 0 10px;
     height: 350px;
     overflow: scroll;
     & ::placeholder {
@@ -142,14 +141,16 @@
     }
   }
   &-footer {
+    z-index: 999;
+    background-color: #fff;
     text-align: center;
     line-height: 30px;
-    padding-left: 10px;
     color: yellowgreen;
     border-bottom: 1px solid #9da2a6;
     font-size: 12px;
     p{
       color: rgb(182,183,183);
+      margin: 0;
       a{
           text-decoration: none;
           color: rgb(237, 118, 128);
@@ -159,3 +160,13 @@
 }
 
 
+@media screen and (max-width: 600px) {
+  .widget {
+    width: 94vw;
+    max-height: 80vh;
+    overflow: scroll;
+    &-body {
+      height: auto;
+    }
+  }  
+}
